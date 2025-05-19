@@ -50,49 +50,61 @@
     </div>
 
     <script>
-        const tg = Telegram.WebApp;
-        
-        tg.ready();
-        tg.expand();
-        
-        // Загрузка начальных данных
+    const tg = Telegram.WebApp;
+    
+    tg.ready();
+    tg.expand();
+    
+    // Функция для запроса актуальных данных
+    function fetchData() {
         tg.sendData(JSON.stringify({ action: "get_data" }));
-
-        // Обработчик обновлений
-       tg.onEvent('web_app_data_received', (event) => {
-    try {
-        const data = JSON.parse(event.data);
-        console.log("📥 Получены данные:", data);
-
-        // Обновляем количество яиц (с проверкой на undefined)
-        document.getElementById("eggsCount").textContent = data.eggs ?? 0;
-
-        // Обновляем информацию о питомце
-        const petView = document.getElementById("petView");
-        if (data.pets?.length > 0) { // Опциональная цепочка для pets
-            const pet = data.pets[0];
-            petView.innerHTML = `
-                <img src="${pet.image}" class="pet" alt="Питомец">
-                <h2>${pet.name}</h2>
-                <p>Уровень: ${pet.level}</p>
-                <p>🍖 Голод: ${pet.hunger}%</p>
-            `;
-        } else {
-            petView.innerHTML = "<p>😢 У вас пока нет питомца</p>";
-        }
-    } catch (e) {
-        console.error("Ошибка обработки данных:", e);
-        alert("⚠️ Не удалось загрузить данные. Попробуйте обновить игру!");
     }
-});
 
-        function openEgg() {
-            tg.sendData(JSON.stringify({ action: "open_egg" }));
-        }
+    // Инициализация: первый запрос данных
+    fetchData();
 
-        function feedPet() {
-            tg.sendData(JSON.stringify({ action: "feed" }));
+    // Обработчик входящих данных
+    tg.onEvent('web_app_data_received', (event) => {
+        try {
+            const data = JSON.parse(event.data);
+            console.log("📥 Данные:", data);
+
+            // Обновление яиц (с защитой от undefined)
+            document.getElementById("eggsCount").textContent = data.eggs ?? 0;
+
+            // Обновление питомца
+            const petView = document.getElementById("petView");
+            if (data.pets?.length > 0) {
+                const pet = data.pets[0];
+                petView.innerHTML = `
+                    <img src="${pet.image}" class="pet" alt="Питомец">
+                    <h2>${pet.name}</h2>
+                    <p>Уровень: ${pet.level}</p>
+                    <p>🍖 Голод: ${pet.hunger}%</p>
+                `;
+            } else {
+                petView.innerHTML = "<p>😢 У вас пока нет питомца</p>";
+            }
+        } catch (e) {
+            console.error("Ошибка:", e);
+            alert("⚠️ Ошибка загрузки! Обновите игру.");
         }
-    </script>
+    });
+
+    // Универсальный обработчик действий
+    async function handleAction(action) {
+        try {
+            tg.sendData(JSON.stringify({ action }));
+            // Ждем ответа от бота и обновляем данные
+            setTimeout(fetchData, 300);
+        } catch (e) {
+            alert("🚨 Ошибка: " + e.message);
+        }
+    }
+
+    // Кнопки
+    function openEgg() { handleAction("open_egg"); }
+    function feedPet() { handleAction("feed"); }
+</script>
 </body>
 </html>
