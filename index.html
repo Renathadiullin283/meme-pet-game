@@ -13,6 +13,228 @@
             max-width: 200px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin: 15px 0;
+        }
+        button { 
+            padding: 10px 20px;
+            margin: 5px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hunger-bar {
+            width: 200px;
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .hunger-progress {
+            height: 100%;
+            background: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .jump {
+            animation: jump 0.5s ease;
+        }
+        .user-info {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="user-info" id="userInfo"></div>
+        <h1>🐾 MemePet</h1>
+        
+        <div id="petView" class="pet-container">
+            <p>Загрузка...</p>
+        </div>
+
+        <div class="controls">
+            <h2>🥚 Яйца: <span id="eggsCount">0</span></h2>
+            <button onclick="openEgg()">Открыть яйцо</button>
+            <button onclick="buyEgg()">Купить яйцо (₽29)</button>
+            
+            <h2>Действия</h2>
+            <button onclick="feedPet()">Покормить</button>
+            <button onclick="shareGame()">Поделиться</button>
+        </div>
+    </div>
+
+    <script>
+        const tg = Telegram.WebApp;
+        let isActionLoading = false;
+        
+        // Инициализация
+        tg.ready();
+        tg.expand();
+        showUserInfo();
+        checkDailyReward();
+
+        // Данные пользователя
+        function showUserInfo() {
+            const user = tg.initDataUnsafe.user;
+            if (user) {
+                document.getElementById("userInfo").innerHTML = 
+                    `👤 ${user.first_name || 'Игрок'} · ID: ${user.id}`;
+            }
+        }
+
+        // Работа с данными
+        function fetchData() {
+            tg.sendData(JSON.stringify({ 
+                action: "get_data",
+                userId: tg.initDataUnsafe.user?.id 
+            }));
+        }
+
+        // Первоначальная загрузка
+        const cachedData = localStorage.getItem("petData");
+        if (cachedData) updateUI(JSON.parse(cachedData));
+        fetchData();
+
+        // Обработчик данных
+        tg.onEvent('web_app_data_received', (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                localStorage.setItem("petData", JSON.stringify(data));
+                updateUI(data);
+            } catch (e) {
+                showError("Ошибка загрузки данных");
+            }
+        });
+
+        // Обновление интерфейса
+        function updateUI(data) {
+            if (!data || typeof data.eggs !== 'number') {
+                throw new Error("Invalid data format");
+            }
+            
+            document.getElementById("eggsCount").textContent = data.eggs;
+            
+            const petView = document.getElementById("petView");
+            if (data.pets?.length > 0) {
+                const pet = data.pets[0];
+                if (!pet.image || !pet.name) {
+                    petView.innerHTML = "<p>⚠ Ошибка данных питомца</p>";
+                    return;
+                }
+                
+                petView.innerHTML = `
+                    <img src="${pet.image}" class="pet">
+                    <h2>${pet.name}</h2>
+                    <p>Уровень: ${pet.level ?? 1}</p>
+                    <div class="hunger-bar">
+                        <div class="hunger-progress" style="width: ${pet.hunger ?? 0}%"></div>
+                    </div>
+                `;
+            } else {
+                petView.innerHTML = "<p>😢 У вас пока нет питомца</p>";
+            }
+        }
+
+        // Действия
+        async function performAction(action) {
+            if (isActionLoading) return;
+            isActionLoading = true;
+            
+            try {
+                tg.showPopup({ message: "⏳ Выполняем действие..." });
+                tg.sendData(JSON.stringify({ 
+                    action,
+                    userId: tg.initDataUnsafe.user?.id 
+                }));
+                setTimeout(fetchData, 1000);
+            } catch (e) {
+                tg.showPopup({ message: "🚨 Ошибка: " + e.message });
+            } finally {
+                setTimeout(() => { isActionLoading = false; }, 1000);
+            }
+        }
+
+        function feedPet() {
+            const petImg = document.querySelector(".pet");
+            if (petImg) petImg.classList.add("jump");
+            setTimeout(() => petImg?.classList.remove("jump"), 500);
+            performAction("feed");
+        }
+
+        function openEgg() {
+            performAction("open_egg");
+        }
+
+        // Монетизация
+        function buyEgg() {
+            tg.openInvoice({
+                currency: "RUB",
+                prices: [{ label: "Золотое яйцо", amount: "2900" }]
+            }, (status) => {
+                if (status === "paid") fetchData();
+            });
+        }
+
+        // Социальные функции
+        function shareGame() {
+            tg.share({
+                title: "Мой питомец в MemePet!",
+                text: "Посмотри, какого питомца я вырастил! 🐾",
+                url: "https://t.me/your_bot_link"
+            });
+        }
+
+        // Ежедневные награды
+        function checkDailyReward() {
+            const lastClaim = localStorage.getItem("lastRewardClaim");
+            if (!lastClaim || Date.now() - lastClaim > 86400000) {
+                tg.showPopup({ 
+                    message: "🎉 Ежедневная награда: 1 яйцо!",
+                    buttons: [{ text: "Забрать", type: "ok" }]
+                });
+                performAction("claim_daily");
+                localStorage.setItem("lastRewardClaim", Date.now());
+            }
+        }
+
+        // Обработка ошибок
+        function showError(message) {
+            console.error(message);
+            tg.showPopup({ message: `⚠ ${message}` });
+        }
+
+        // Офлайн-режим
+        window.addEventListener("offline", () => {
+            tg.showPopup({ message: "⚠ Нет интернета! Данные не сохранены." });
+        });
+    </script>
+</body>
+</html>
+    <style>
+        body { 
+            font-family: Arial; 
+            padding: 20px;
+            background: #f0f8ff;
+        }
+        .pet { 
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         button { 
             padding: 10px 20px;
