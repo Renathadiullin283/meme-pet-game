@@ -4,71 +4,95 @@
     <title>MemePet</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { font-family: Arial; padding: 20px; }
-        .pet { max-width: 200px; }
-        button { padding: 10px; margin: 5px; }
+        body { 
+            font-family: Arial; 
+            padding: 20px;
+            background: #f0f8ff;
+        }
+        .pet { 
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        button { 
+            padding: 10px 20px;
+            margin: 5px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <h2>🐾 Ваш питомец</h2>
-    <div id="petView"></div>
-    
-    <h3>🥚 Яйца: <span id="eggsCount">0</span></h3>
-    <button onclick="openEgg()">Открыть яйцо</button>
+    <div class="container">
+        <h1>🐾 MemePet</h1>
+        
+        <div id="petView" class="pet-container">
+            <p>Загрузка...</p>
+        </div>
 
-    <h3>Действия</h3>
-    <button onclick="feedPet()">Покормить</button>
+        <div class="controls">
+            <h2>🥚 Яйца: <span id="eggsCount">0</span></h2>
+            <button onclick="openEgg()">Открыть яйцо</button>
+            
+            <h2>Действия</h2>
+            <button onclick="feedPet()">Покормить</button>
+        </div>
+    </div>
 
     <script>
-    const tg = Telegram.WebApp;
-    let userData = null;
-
-    // Загрузка данных
-    function loadData() {
-        tg.sendData(JSON.stringify({ action: "get_data" }));
-    }
-
-    // Обработка полученных данных
-    tg.onEvent('web_app_data_received', (event) => {
-        const data = JSON.parse(event.data);
-        userData = data;
+        const tg = Telegram.WebApp;
         
-        // Обновляем интерфейс
-        if (data.pets && data.pets.length > 0) {
-            renderPet(data.pets[0]);
+        tg.ready();
+        tg.expand();
+        
+        // Загрузка начальных данных
+        tg.sendData(JSON.stringify({ action: "get_data" }));
+
+        // Обработчик обновлений
+        tg.onEvent('web_app_data_received', (event) => {
+            try {
+                const data = JSON.parse(event.data);
+                console.log("📥 Получены данные:", data);
+                
+                // Обновление интерфейса
+                document.getElementById("eggsCount").textContent = data.eggs;
+                
+                const petView = document.getElementById("petView");
+                if (data.pets.length > 0) {
+                    const pet = data.pets[0];
+                    petView.innerHTML = `
+                        <img src="${pet.image}" class="pet">
+                        <h2>${pet.name}</h2>
+                        <p>Уровень: ${pet.level}</p>
+                        <p>🍖 Голод: ${pet.hunger}%</p>
+                    `;
+                } else {
+                    petView.innerHTML = "<p>😢 У вас пока нет питомца</p>";
+                }
+            } catch (e) {
+                console.error("Ошибка обработки данных:", e);
+            }
+        });
+
+        function openEgg() {
+            tg.sendData(JSON.stringify({ action: "open_egg" }));
+            tg.close();
         }
-        document.getElementById("eggsCount").textContent = data.eggs || 0;
-    });
 
-    // Открытие яйца
-    function openEgg() {
-        tg.sendData(JSON.stringify({ action: "open_egg" }));
-        tg.close();
-    }
-
-    // Покормить
-    function feedPet() {
-        tg.sendData(JSON.stringify({ action: "feed" }));
-    }
-
-    // Рендер питомца
-    function renderPet(pet) {
-        const petView = document.getElementById("petView");
-        if (pet) {
-            petView.innerHTML = 
-                <img src="${pet.image}" class="pet">
-                <p>${pet.name} (Ур. ${pet.level})</p>
-                <p>🍖 Голод: ${pet.hunger}%</p>
-            ;
-        } else {
-            petView.innerHTML = "<p>У вас нет питомцев 😢</p>";
+        function feedPet() {
+            tg.sendData(JSON.stringify({ action: "feed" }));
+            tg.close();
         }
-    }
-
-    // Инициализация
-    tg.ready();
-    tg.expand();
-    loadData();
-</script>
+    </script>
 </body>
 </html>
