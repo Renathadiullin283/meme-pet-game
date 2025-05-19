@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MemePet</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .pet { max-width: 200px; }
+        button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>🐾 Ваш питомец</h2>
+    <div id="petView"></div>
+    
+    <h3>🥚 Яйца: <span id="eggsCount">0</span></h3>
+    <button onclick="openEgg()">Открыть яйцо</button>
+
+    <h3>Действия</h3>
+    <button onclick="feedPet()">Покормить</button>
+
+    <script>
+        const tg = Telegram.WebApp;
+        let userData = null;
+
+        // Загрузка данных
+        function loadData() {
+            tg.sendData(JSON.stringify({ action: "get_data" }));
+            tg.onEvent('themeChanged', loadData);
+        }
+
+        // Открытие яйца
+        function openEgg() {
+            tg.sendData(JSON.stringify({ action: "open_egg" }));
+            tg.close();
+        }
+
+        // Покормить
+        function feedPet() {
+            tg.sendData(JSON.stringify({ action: "feed" }));
+        }
+
+        // Рендер питомца
+        function renderPet(pet) {
+            if (pet) {
+                document.getElementById("petView").innerHTML = 
+                    <img src="${pet.image}" class="pet">
+                    <p>${pet.name} (Ур. ${pet.level})</p>
+                    <p>🍖 Голод: ${pet.hunger}%</p>
+                ;
+            } else {
+                document.getElementById("petView").innerHTML = "<p>У вас нет питомцев 😢</p>";
+            }
+        }
+
+        // Инициализация
+        tg.ready();
+        tg.expand();
+        loadData();
+    </script>
+</body>
+</html>
