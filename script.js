@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedButton = document.getElementById('feed-button');
     const getPetButton = document.getElementById('get-pet-button');
     const petsContainer = document.getElementById('pets-container');
+    const noPetMessage = document.getElementById('no-pet-message');
 
     let hunger = 100;
     let eggs = 1;
@@ -68,6 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
             petElement.src = newPet.image;
             petElement.alt = newPet.name;
             petsContainer.appendChild(petElement);
+            // Скрытие сообщения
+            noPetMessage.style.display = 'none';
+            // Отображение изображения питомца
+            petImage.src = newPet.image;
+            petImage.style.display = 'block';
         }
     });
 
@@ -75,4 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     hungerValue.textContent = hunger;
     eggsValue.textContent = eggs;
     coinsValue.textContent = coins;
+
+    // Проверка наличия питомца
+    if (pets.length === 0) {
+        noPetMessage.style.display = 'block';
+        petImage.style.display = 'none';
+    } else {
+        petImage.src = pets[0].image;
+        petImage.style.display = 'block';
+    }
 });
