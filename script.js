@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const coinsValue = document.getElementById('coins-value');
     const feedButton = document.getElementById('feed-button');
     const getPetButton = document.getElementById('get-pet-button');
+    const petsContainer = document.getElementById('pets-container');
 
-    let hunger: = 100;
+    let hunger = 100;
     let eggs = 1;
     let coins = 100;
+    let pets = [];
 
     // Обновление данных на сервере
     function updateServerData() {
@@ -16,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
             action: 'update_data',
             hunger: hunger,
             eggs: eggs,
-            coins: coins
+            coins: coins,
+            pets: pets
         };
 
         // Отправка данных на сервер через POST-запрос
@@ -51,9 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
             eggs -= 1;
             eggsValue.textContent = eggs;
             // Логика получения нового питомца
-            // Например, можно добавить нового питомца в массив питомцев
-            // и обновить интерфейс
+            const newPet = {
+                name: "New Pet",
+                image: "images/new_pet.png",
+                hunger: 100
+            };
+            pets.push(newPet);
+            // Обновление интерфейса
             updateServerData();
+            alert("Вы получили нового питомца!");
+            // Отображение нового питомца
+            const petElement = document.createElement('img');
+            petElement.src = newPet.image;
+            petElement.alt = newPet.name;
+            petsContainer.appendChild(petElement);
         }
     });
 
