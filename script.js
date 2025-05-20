@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const eggsButton = document.getElementById('eggs-button');
     const petsButton = document.getElementById('pets-button');
     const petsContainer = document.getElementById('pets-container');
+    const eggsModal = document.getElementById('eggs-modal');
+    const closeButton = document.getElementsByClassName("close")[0];
 
     let hunger = 100;
     let eggs = 1;
@@ -75,15 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Обработка нажатия кнопки "Яйца"
     eggsButton.addEventListener('click', () => {
-        // Логика для открытия меню с яйцами
-        alert("Открытие меню с яйцами");
+        eggsModal.style.display = "block";
     });
 
-    // Обработка нажатия кнопки "Мои питомцы"
-    petsButton.addEventListener('click', () => {
-        // Логика для открытия меню с питомцами
-        alert("Открытие меню с питомцами");
-    });
+    // Закрытие модального окна
+    closeButton.onclick = function() {
+        eggsModal.style.display = "none";
+    };
+
+    // Обработка нажатия на кнопки с яйцами
+    document.getElementById("common-egg").onclick = function() {
+        alert("Вы выбрали обычное яйцо!");
+        eggsModal.style.display = "none";
+    };
+
+    document.getElementById("rare-egg").onclick = function() {
+        alert("Вы выбрали редкое яйцо!");
+        eggsModal.style.display = "none";
+    };
+
+    document.getElementById("legendary-egg").onclick = function() {
+        alert("Вы выбрали легендарное яйцо!");
+        eggsModal.style.display = "none";
+    };
 
     // Инициализация данных
     hungerValue.textContent = hunger;
