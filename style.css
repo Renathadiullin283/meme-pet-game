@@ -3,12 +3,20 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 #app {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #pet-container {
@@ -18,14 +26,30 @@ body {
 #pet-image {
     width: 200px;
     height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #controls button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
 }
 
 #resources {
     margin-top: 20px;
+}
+
+#resources p {
+    margin: 5px 0;
 }
