@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const eggsValue = document.getElementById('eggs-value');
     const coinsValue = document.getElementById('coins-value');
     const feedButton = document.getElementById('feed-button');
+    const getPetButton = document.getElementById('get-pet-button');
 
     let hunger = 100;
     let eggs = 1;
@@ -40,6 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hunger > 0) {
             hunger -= 20;
             hungerValue.textContent = hunger;
+            updateServerData();
+        }
+    });
+
+    // Обработка нажатия кнопки "Получить питомца"
+    getPetButton.addEventListener('click', () => {
+        if (eggs > 0) {
+            eggs -= 1;
+            eggsValue.textContent = eggs;
+            // Логика получения нового питомца
+            // Например, можно добавить нового питомца в массив питомцев
+            // и обновить интерфейс
             updateServerData();
         }
     });
