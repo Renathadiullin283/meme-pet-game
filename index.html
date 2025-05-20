@@ -130,12 +130,10 @@
         // Действия
         function openEgg() {
             tg.sendData(JSON.stringify({ action: "open_egg" }));
-            tg.close();
         }
 
         function feedPet() {
             tg.sendData(JSON.stringify({ action: "feed" }));
-            tg.close();
         }
 
         // Показать ошибку
@@ -143,6 +141,31 @@
             const petView = document.getElementById('petView');
             petView.innerHTML = `<div class="loading" style="color: red;">⚠️ ${message}</div>`;
         }
+        // Убедитесь, что данные получены
+        let dataReceived = false;
+
+        // Таймер для отслеживания зависших запросов
+        let timeout = setTimeout(() => {
+            if (!dataReceived) {
+            showError("Нет соединения с сервером");
+            }
+        }, 5000);
+
+        // Обработчик получения данных
+        tg.onEvent('web_app_data_received', (event) => {
+        dataReceived = true;
+        clearTimeout(timeout);
+    
+        try {
+        const data = JSON.parse(event.data);
+        if (!data.eggs && !data.pets) {
+            throw new Error("Некорректные данные");
+        }
+        updateUI(data);
+        } catch (e) {
+        showError("Ошибка загрузки данных");
+        }
+        });
 
         // Закрыть Web App при нажатии вне элементов
         document.addEventListener('click', (e) => {
