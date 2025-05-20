@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedButton = document.getElementById('feed-button');
     const getPetButton = document.getElementById('get-pet-button');
 
-    let hunger = 100;
+    let hunger: = 100;
     let eggs = 1;
     let coins = 100;
 
