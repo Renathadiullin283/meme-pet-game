@@ -47,6 +47,7 @@
             font-size: 16px;
             transition: background 0.3s;
             margin: 5px;
+            position: relative;
         }
 
         .button:hover {
@@ -64,6 +65,22 @@
             padding: 20px;
             color: #666;
         }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -76,43 +93,65 @@
 
         <div class="pet-card">
             <h2 class="egg-counter">🥚 Яиц: <span id="eggsCount">0</span></h2>
-            <button class="button" onclick="openEgg()">Открыть яйцо</button>
+            <button class="button" onclick="openEgg()" id="openEggBtn">
+                Открыть яйцо
+            </button>
         </div>
 
         <div class="pet-card">
             <h2>Действия</h2>
-            <button class="button" onclick="feedPet()">Покормить питомца</button>
+            <button class="button" onclick="feedPet()" id="feedBtn">
+                Покормить питомца
+            </button>
         </div>
     </div>
 
     <script>
         const tg = window.Telegram.WebApp;
+        let dataReceived = false;
+        let timeout = null;
         
         // Инициализация Web App
         tg.expand();
         tg.ready();
 
-        // Запрос данных при загрузке
-        tg.sendData(JSON.stringify({ action: "get_data" }));
+        // Запрос данных
+        function requestData() {
+            dataReceived = false;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                if (!dataReceived) showError("Нет соединения с сервером");
+            }, 5000);
+            tg.sendData(JSON.stringify({ action: "get_data" }));
+        }
 
         // Обработчик получения данных
         tg.onEvent('web_app_data_received', (event) => {
+            dataReceived = true;
+            clearTimeout(timeout);
+            
             try {
                 const data = JSON.parse(event.data);
+                if (!('eggs' in data) && !('pets' in data)) {
+                    throw new Error("Некорректные данные");
+                }
                 updateUI(data);
             } catch (e) {
-                showError("Ошибка обработки данных");
+                showError("Ошибка загрузки данных");
             }
         });
 
         // Обновление интерфейса
         function updateUI(data) {
+            if (!data) return;
+            
             // Обновляем счетчик яиц
-            document.getElementById('eggsCount').textContent = data.eggs || 0;
+            const eggsElement = document.getElementById('eggsCount');
+            eggsElement.textContent = 'eggs' in data ? data.eggs : 0;
             
             const petView = document.getElementById('petView');
             
-            if (data.pets && data.pets.length > 0) {
+            if (data.pets?.length > 0) {
                 const pet = data.pets[0];
                 petView.innerHTML = `
                     <img src="${pet.image}" class="pet-image">
@@ -127,52 +166,49 @@
             }
         }
 
-        // Действия
-        function openEgg() {
-            tg.sendData(JSON.stringify({ action: "open_egg" }));
+        // Действия с защитой от двойного нажатия
+        function actionWrapper(fn) {
+            return function(...args) {
+                const btn = event.target;
+                btn.disabled = true;
+                btn.innerHTML = `<div class="loader"></div>`;
+                
+                try {
+                    fn(...args);
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = args.callee.name === 'openEgg' 
+                            ? 'Открыть яйцо' 
+                            : 'Покормить питомца';
+                    }, 1000);
+                } catch (e) {
+                    btn.disabled = false;
+                    btn.innerHTML = args.callee.name === 'openEgg' 
+                        ? 'Открыть яйцо' 
+                        : 'Покормить питомца';
+                    showError("Ошибка выполнения действия");
+                }
+            }
         }
 
-        function feedPet() {
+        const openEgg = actionWrapper(function() {
+            tg.sendData(JSON.stringify({ action: "open_egg" }));
+            requestData();
+        });
+
+        const feedPet = actionWrapper(function() {
             tg.sendData(JSON.stringify({ action: "feed" }));
-        }
+            requestData();
+        });
 
         // Показать ошибку
         function showError(message) {
             const petView = document.getElementById('petView');
             petView.innerHTML = `<div class="loading" style="color: red;">⚠️ ${message}</div>`;
         }
-        // Убедитесь, что данные получены
-        let dataReceived = false;
 
-        // Таймер для отслеживания зависших запросов
-        let timeout = setTimeout(() => {
-            if (!dataReceived) {
-            showError("Нет соединения с сервером");
-            }
-        }, 5000);
-
-        // Обработчик получения данных
-        tg.onEvent('web_app_data_received', (event) => {
-        dataReceived = true;
-        clearTimeout(timeout);
-    
-        try {
-        const data = JSON.parse(event.data);
-        if (!data.eggs && !data.pets) {
-            throw new Error("Некорректные данные");
-        }
-        updateUI(data);
-        } catch (e) {
-        showError("Ошибка загрузки данных");
-        }
-        });
-
-        // Закрыть Web App при нажатии вне элементов
-        document.addEventListener('click', (e) => {
-            if (e.target === document.body) {
-                tg.close();
-            }
-        });
+        // Первоначальный запрос данных
+        requestData();
     </script>
 </body>
 </html>
