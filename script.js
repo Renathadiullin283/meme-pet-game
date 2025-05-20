@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const petImage = document.getElementById('pet-image');
+    const petCanvas = document.getElementById('pet-canvas');
     const hungerValue = document.getElementById('hunger-value');
     const eggsValue = document.getElementById('eggs-value');
     const coinsValue = document.getElementById('coins-value');
@@ -11,6 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let eggs = 1;
     let coins = 100;
     let pets = [];
+
+    // Создание 3D-сцены
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: petCanvas });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Добавление света
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    // Добавление 3D-модели питомца
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+
+    animate();
 
     // Обновление данных на сервере
     function updateServerData() {
