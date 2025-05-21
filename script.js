@@ -1,176 +1,152 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const petCanvas = document.getElementById('pet-canvas');
-    const hungerValue = document.getElementById('hunger-value');
-    const eggsValue = document.getElementById('eggs-value');
-    const coinsValue = document.getElementById('coins-value');
-    const feedButton = document.getElementById('feed-button');
-    const breedButton = document.getElementById('breed-button');
-    const petsContainer = document.getElementById('pets-container');
-    const inventoryList = document.getElementById('inventory-list');
+  const hungerValue = document.getElementById('hunger-value');
+  const eggsValue = document.getElementById('eggs-value');
+  const coinsValue = document.getElementById('coins-value');
+  const feedButton = document.getElementById('feed-button');
+  const breedButton = document.getElementById('breed-button');
+  const inventoryList = document.getElementById('inventory-list');
+  const petImage = document.getElementById('pet-image');
+  const prevPetBtn = document.getElementById('prev-pet');
+  const nextPetBtn = document.getElementById('next-pet');
 
-    let hunger = 100;
-    let eggs = 5;
-    let coins = 100;
-    let pets = [];
-    let inventory = [{ name: 'Еда', type: 'food', count: 3 }];
+  let hunger = 100;
+  let coins = 100;
+  let eggs = { common: 3, rare: 2, legendary: 1 };
+  let inventory = [{ name: 'Еда', type: 'food', count: 3 }];
+  let pets = [];
+  let activePetIndex = 0;
 
-    const petsPool = {
+  const petsPool = {
     common: [
-        { name: 'Сидящий котик', image: 'images/cat.gif' },
-        { name: 'Пицца-дог', image: 'images/pizza_dog.gif' }
+      { name: 'Сидящий котик', image: 'images/cat.gif' },
+      { name: 'Пицца-дог', image: 'images/pizza_dog.gif' }
     ],
     rare: [
-        { name: 'Кот на задних лапах', image: 'images/cat2.gif' },
-        { name: 'Корги', image: 'images/dog1.gif' }
+      { name: 'Кот на лапках', image: 'images/cat2.gif' },
+      { name: 'Корги', image: 'images/dog1.gif' }
     ],
     legendary: [
-        { name: 'Пёс с поворотом головы', image: 'images/dog3.gif' },
-        { name: 'Дог на диване', image: 'images/dog2.gif' }
+      { name: 'Пёс с поворотом', image: 'images/dog3.gif' },
+      { name: 'Дог на диване', image: 'images/dog2.gif' }
     ]
-};
+  };
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: petCanvas });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  function updatePetMood() {}
 
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-    camera.position.z = 5;
-
-    function updatePetMood() {
-        if (hunger > 60) cube.material.color.set(0x00ff00);
-        else if (hunger > 20) cube.material.color.set(0xffff00);
-        else cube.material.color.set(0xff0000);
+  function updateActivePet() {
+    if (pets.length > 0) {
+      const pet = pets[activePetIndex % pets.length];
+      petImage.src = pet.image;
+      petImage.alt = pet.name;
+    } else {
+      petImage.src = '';
+      petImage.alt = '';
     }
+  }
 
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
+  prevPetBtn.addEventListener('click', () => {
+    if (pets.length > 0) {
+      activePetIndex = (activePetIndex - 1 + pets.length) % pets.length;
+      updateActivePet();
     }
+  });
 
-    animate();
-
-    setInterval(() => {
-        hunger = Math.max(0, hunger - 5);
-        hungerValue.textContent = hunger;
-        updatePetMood();
-        updateServerData();
-    }, 10000);
-
-    function saveToLocal() {
-        localStorage.setItem('gameData', JSON.stringify({ hunger, eggs, coins, pets, inventory }));
+  nextPetBtn.addEventListener('click', () => {
+    if (pets.length > 0) {
+      activePetIndex = (activePetIndex + 1) % pets.length;
+      updateActivePet();
     }
+  });
 
-    function loadFromLocal() {
-        const data = JSON.parse(localStorage.getItem('gameData'));
-        if (data) {
-            ({ hunger, eggs, coins, pets, inventory } = data);
-            hungerValue.textContent = hunger;
-            eggsValue.textContent = eggs;
-            coinsValue.textContent = coins;
-            pets.forEach(p => addPetToDOM(p));
-            updateInventoryDOM();
-            updatePetMood();
+  function updateInventoryDOM() {
+    inventoryList.innerHTML = '';
+    inventory.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} x${item.count}`;
+      li.onclick = () => {
+        if (item.type === 'food' && item.count > 0) {
+          hunger = Math.min(100, hunger + 20);
+          item.count--;
+          hungerValue.textContent = hunger;
+          updateInventoryDOM();
+          updatePetMood();
         }
-    }
-
-    function updateInventoryDOM() {
-        inventoryList.innerHTML = '';
-        inventory.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} x${item.count}`;
-            li.style.cursor = 'pointer';
-            li.onclick = () => {
-                if (item.type === 'food' && item.count > 0) {
-                    hunger = Math.min(100, hunger + 20);
-                    item.count--;
-                    document.getElementById('feed-sound').play();
-                    hungerValue.textContent = hunger;
-                    updatePetMood();
-                    updateInventoryDOM();
-                    updateServerData();
-                }
-            };
-            inventoryList.appendChild(li);
-        });
-    }
-
-    function addPetToDOM(pet) {
-        const petElement = document.createElement('img');
-        petElement.src = pet.image;
-        petElement.alt = pet.name;
-        petsContainer.appendChild(petElement);
-    }
-
-    feedButton.addEventListener('click', () => {
-        const foodItem = inventory.find(i => i.type === 'food' && i.count > 0);
-        if (foodItem) {
-            foodItem.count--;
-            hunger = Math.min(100, hunger + 20);
-            document.getElementById('feed-sound').play();
-            hungerValue.textContent = hunger;
-            updatePetMood();
-            updateInventoryDOM();
-            updateServerData();
-        } else {
-            alert('Нет еды в инвентаре!');
-        }
+      };
+      inventoryList.appendChild(li);
     });
+  }
 
-    breedButton.addEventListener('click', () => {
-        if (pets.length >= 2 && coins >= 50) {
-            coins -= 50;
-            coinsValue.textContent = coins;
-            const newPet = { name: 'Baby Pet', image: 'images/baby_pet.png', hunger: 100 };
-            pets.push(newPet);
-            addPetToDOM(newPet);
-            alert('Новый питомец появился в результате скрещивания!');
-            updateServerData();
-        } else {
-            alert('Нужно хотя бы 2 питомца и 50 монет!');
-        }
-    });
+  function updateUI() {
+    hungerValue.textContent = hunger;
+    coinsValue.textContent = coins;
+    eggsValue.textContent = Object.values(eggs).reduce((a, b) => a + b, 0);
+    updateInventoryDOM();
+    updateActivePet();
+  }
 
-    document.querySelectorAll('.egg-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const type = button.getAttribute('data-type');
-            const eggCost = { common: 1, rare: 2, legendary: 3 };
-            if (eggs >= eggCost[type]) {
-                eggs -= eggCost[type];
-                eggsValue.textContent = eggs;
+  function addPetToDOM(pet) {
+    pets.push(pet);
+    activePetIndex = pets.length - 1;
+    updateActivePet();
+  }
 
-                const waitTimes = { common: 2000, rare: 4000, legendary: 7000 };
-                alert(`Яйцо вылупляется... (${type})`);
-                setTimeout(() => {
-                    const pool = petsPool[type];
-                    const pet = pool[Math.floor(Math.random() * pool.length)];
-                    const newPet = { ...pet, hunger: 100 };
-                    pets.push(newPet);
-                    addPetToDOM(newPet);
-                    alert(`Питомец ${pet.name} вылупился из яйца!`);
-                    updateServerData();
-                }, waitTimes[type]);
-            } else {
-                alert(`Недостаточно яиц для ${type} яйца.`);
-            }
-        });
-    });
-
-    function updateServerData() {
-        saveToLocal();
+  feedButton.addEventListener('click', () => {
+    const foodItem = inventory.find(i => i.type === 'food' && i.count > 0);
+    if (foodItem) {
+      foodItem.count--;
+      hunger = Math.min(100, hunger + 20);
+      hungerValue.textContent = hunger;
+      updateInventoryDOM();
+      updatePetMood();
+    } else {
+      alert('Нет еды в инвентаре!');
     }
+  });
 
-    window.addEventListener('beforeunload', saveToLocal);
-    loadFromLocal();
+  breedButton.addEventListener('click', () => {
+    if (pets.length >= 2 && coins >= 50) {
+      coins -= 50;
+      const baby = { name: 'Мемный малыш', image: 'images/baby_pet.png' };
+      addPetToDOM(baby);
+      updateUI();
+      alert('Появился новый питомец!');
+    } else {
+      alert('Нужно хотя бы 2 питомца и 50 монет');
+    }
+  });
+
+  document.querySelectorAll('.egg-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const type = button.getAttribute('data-type');
+      if (eggs[type] > 0) {
+        eggs[type]--;
+        const wait = { common: 1000, rare: 3000, legendary: 5000 }[type];
+        setTimeout(() => {
+          const pool = petsPool[type];
+          const pet = pool[Math.floor(Math.random() * pool.length)];
+          addPetToDOM(pet);
+          updateUI();
+          alert(`${pet.name} вылупился из ${type} яйца!`);
+        }, wait);
+        updateUI();
+      } else {
+        alert(`Нет ${type} яиц!`);
+      }
+    });
+  });
+
+  window.buyEgg = function(type) {
+    if (!window.Telegram?.WebApp?.sendData) return;
+    Telegram.WebApp.sendData(JSON.stringify({ action: "buy_egg", egg_type: type }));
+    setTimeout(syncWithBot, 500);
+  };
+
+  function syncWithBot() {
+    if (!window.Telegram?.WebApp?.sendData) return;
+    Telegram.WebApp.sendData(JSON.stringify({ action: "sync" }));
+  }
+
+  window.Telegram?.WebApp?.ready?.();
+  syncWithBot();
+  updateUI();
 });
