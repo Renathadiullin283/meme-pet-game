@@ -1,0 +1,120 @@
+
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ffe9ec, #e0f7fa);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+#app {
+  max-width: 420px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 40px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+nav#top-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+#top-menu button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f48fb1;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+#top-menu button:hover {
+  background: #ec407a;
+}
+.screen { display: none; }
+.screen:first-child { display: block; }
+#active-pet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+#active-pet img {
+  width: 150px;
+  height: 150px;
+  border-radius: 16px;
+  animation: bounce 2s infinite;
+}
+#active-pet button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+button {
+  cursor: pointer;
+}
+#controls button, .egg-button, .shop button {
+  background: #aed581;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+#controls button:hover, .egg-button:hover, .shop button:hover {
+  background: #9ccc65;
+}
+#resources p, #pet-hunger, #level-display {
+  margin: 5px 0;
+  font-size: 16px;
+}
+#inventory-list li {
+  list-style: none;
+  background: #fce4ec;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+#inventory-list li:hover {
+  background: #f8bbd0;
+}
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.pet-card {
+  background: #f3e5f5;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.pet-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+#quest-list li {
+  background: #e1f5fe;
+  border: 1px dashed #81d4fa;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#quest-list li:hover {
+  background: #b3e5fc;
+}
