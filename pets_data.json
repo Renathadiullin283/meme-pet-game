@@ -1,0 +1,2302 @@
+[
+  {
+    "base": {
+      "name": "MemePet #1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 80,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #1 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 110,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #1 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 140,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 81,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #2 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 111,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #2 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 141,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #3",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 82,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #3 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 112,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #3 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 142,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #4",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 83,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #4 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 113,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #4 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 143,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #5",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 84,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #5 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 114,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #5 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 144,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #6",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 85,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #6 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 115,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #6 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 145,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #7",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 86,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #7 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 116,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #7 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 146,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #8",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 87,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #8 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 117,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #8 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 147,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #9",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 88,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #9 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 118,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #9 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 148,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #10",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 89,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #10 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 119,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #10 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 149,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #11",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 90,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #11 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 120,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #11 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 150,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #12",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 91,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #12 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 121,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #12 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 151,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #13",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 92,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #13 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 122,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #13 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 152,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #14",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 93,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #14 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 123,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #14 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 153,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #15",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 94,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #15 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 124,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #15 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 154,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #16",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 95,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #16 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 125,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #16 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 155,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #17",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 96,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #17 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 126,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #17 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 156,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #18",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 97,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #18 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 127,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #18 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 157,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #19",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 98,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #19 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 128,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #19 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 158,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #20",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 99,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #20 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 129,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #20 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 159,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #21",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 80,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #21 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 110,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #21 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 140,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #22",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 81,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #22 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 111,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #22 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 141,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #23",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 82,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #23 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 112,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #23 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 142,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #24",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 83,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #24 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 113,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #24 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 143,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #25",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 84,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #25 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 114,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #25 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 144,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #26",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 85,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #26 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 115,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #26 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 145,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #27",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 86,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #27 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 116,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #27 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 146,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #28",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 87,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #28 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 117,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #28 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 147,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #29",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 88,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #29 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 118,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #29 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 148,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #30",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 89,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #30 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 119,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #30 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 149,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #31",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 90,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #31 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 120,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #31 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 150,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #32",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 91,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #32 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 121,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #32 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 151,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #33",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 92,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #33 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 122,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #33 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 152,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #34",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 93,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #34 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 123,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #34 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 153,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #35",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 94,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #35 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 124,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #35 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 154,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #36",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 95,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #36 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 125,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #36 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 155,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #37",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 96,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #37 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 126,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #37 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 156,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #38",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 97,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #38 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 127,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #38 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 157,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #39",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 98,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #39 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 128,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #39 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 158,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #40",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 99,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #40 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 129,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #40 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 159,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #41",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 80,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #41 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 110,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #41 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 140,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #42",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 81,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #42 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 111,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #42 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 141,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #43",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 82,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #43 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 112,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #43 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 142,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #44",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 83,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #44 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 113,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #44 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 143,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #45",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 84,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #45 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 114,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #45 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 144,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #46",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 85,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #46 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 115,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #46 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 145,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #47",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 86,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #47 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 116,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #47 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 146,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #48",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 87,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #48 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 117,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #48 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 147,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #49",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 88,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #49 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 118,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #49 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 148,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #50",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 89,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #50 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 119,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #50 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 149,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #51",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 90,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #51 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 120,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #51 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 150,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #52",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 91,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #52 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 121,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #52 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 151,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #53",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 92,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #53 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 122,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #53 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 152,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #54",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 93,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #54 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 123,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #54 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 153,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #55",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 94,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #55 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 124,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #55 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 154,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #56",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 95,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #56 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 125,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #56 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 155,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #57",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 96,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #57 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 126,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #57 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 156,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #58",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 97,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #58 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 127,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #58 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 157,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #59",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 98,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #59 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 128,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #59 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 158,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #60",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 99,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #60 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 129,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #60 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 159,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #61",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 80,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #61 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 110,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #61 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 140,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #62",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 81,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #62 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 111,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #62 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 141,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #63",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 82,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #63 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 112,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #63 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 142,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #64",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 83,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #64 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 113,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #64 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 143,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #65",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 84,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #65 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 114,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #65 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 144,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #66",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 85,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #66 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 115,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #66 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 145,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #67",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 86,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #67 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 116,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #67 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 146,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #68",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 87,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #68 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 117,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #68 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 147,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #69",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 88,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #69 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 118,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #69 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 148,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #70",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 89,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #70 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 119,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #70 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 149,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #71",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 90,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #71 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 120,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #71 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 150,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #72",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 91,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #72 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 121,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #72 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 151,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #73",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 92,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #73 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 122,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #73 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 152,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #74",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 93,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #74 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 123,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #74 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 153,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #75",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 94,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #75 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 124,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #75 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 154,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #76",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 95,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #76 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 125,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #76 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 155,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #77",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 96,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #77 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 126,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #77 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 156,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #78",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 97,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #78 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 127,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #78 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 157,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #79",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 98,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #79 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 128,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #79 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 158,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #80",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 99,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #80 Evo 1",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 129,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #80 Evo 2",
+      "image": "epic_pet.gif",
+      "rarity": "epic",
+      "hp": 159,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #81",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 80,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #81 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 110,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #81 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 140,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #82",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 81,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #82 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 111,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #82 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 141,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #83",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 82,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #83 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 112,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #83 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 142,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #84",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 83,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #84 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 113,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #84 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 143,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #85",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 84,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #85 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 114,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #85 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 144,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #86",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 85,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #86 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 115,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #86 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 145,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #87",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 86,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #87 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 116,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #87 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 146,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #88",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 87,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #88 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 117,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #88 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 147,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #89",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 88,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #89 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 118,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #89 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 148,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #90",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 89,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #90 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 119,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #90 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 149,
+      "attack": 39
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #91",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 90,
+      "attack": 10
+    },
+    "stage1": {
+      "name": "MemePet #91 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 120,
+      "attack": 20
+    },
+    "stage2": {
+      "name": "MemePet #91 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 150,
+      "attack": 30
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #92",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 91,
+      "attack": 11
+    },
+    "stage1": {
+      "name": "MemePet #92 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 121,
+      "attack": 21
+    },
+    "stage2": {
+      "name": "MemePet #92 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 151,
+      "attack": 31
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #93",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 92,
+      "attack": 12
+    },
+    "stage1": {
+      "name": "MemePet #93 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 122,
+      "attack": 22
+    },
+    "stage2": {
+      "name": "MemePet #93 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 152,
+      "attack": 32
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #94",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 93,
+      "attack": 13
+    },
+    "stage1": {
+      "name": "MemePet #94 Evo 1",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 123,
+      "attack": 23
+    },
+    "stage2": {
+      "name": "MemePet #94 Evo 2",
+      "image": "legendary_pet.gif",
+      "rarity": "legendary",
+      "hp": 153,
+      "attack": 33
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #95",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 94,
+      "attack": 14
+    },
+    "stage1": {
+      "name": "MemePet #95 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 124,
+      "attack": 24
+    },
+    "stage2": {
+      "name": "MemePet #95 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 154,
+      "attack": 34
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #96",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 95,
+      "attack": 15
+    },
+    "stage1": {
+      "name": "MemePet #96 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 125,
+      "attack": 25
+    },
+    "stage2": {
+      "name": "MemePet #96 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 155,
+      "attack": 35
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #97",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 96,
+      "attack": 16
+    },
+    "stage1": {
+      "name": "MemePet #97 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 126,
+      "attack": 26
+    },
+    "stage2": {
+      "name": "MemePet #97 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 156,
+      "attack": 36
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #98",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 97,
+      "attack": 17
+    },
+    "stage1": {
+      "name": "MemePet #98 Evo 1",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 127,
+      "attack": 27
+    },
+    "stage2": {
+      "name": "MemePet #98 Evo 2",
+      "image": "rare_pet.gif",
+      "rarity": "rare",
+      "hp": 157,
+      "attack": 37
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #99",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 98,
+      "attack": 18
+    },
+    "stage1": {
+      "name": "MemePet #99 Evo 1",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 128,
+      "attack": 28
+    },
+    "stage2": {
+      "name": "MemePet #99 Evo 2",
+      "image": "special_pet.gif",
+      "rarity": "special",
+      "hp": 158,
+      "attack": 38
+    }
+  },
+  {
+    "base": {
+      "name": "MemePet #100",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 99,
+      "attack": 19
+    },
+    "stage1": {
+      "name": "MemePet #100 Evo 1",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 129,
+      "attack": 29
+    },
+    "stage2": {
+      "name": "MemePet #100 Evo 2",
+      "image": "common_pet.gif",
+      "rarity": "common",
+      "hp": 159,
+      "attack": 39
+    }
+  }
+]
